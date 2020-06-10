@@ -36,8 +36,8 @@
                         </div>
 
                         <div class="as-accessories-results  as-search-desktop">
-                            <div class="width:60%">
-                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
+                            <div class="width:60%;max-width: 60%;">
+                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;max-width: 60%;">
                                     <div class="as-dummy-container as-dummy-img">
                                         <img src="<?php echo $_POST['img'] ?>" class="ir ir item-image as-producttile-image  " 
 										style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
