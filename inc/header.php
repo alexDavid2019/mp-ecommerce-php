@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
     <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
-    <link rel="stylesheet" href="./assets/fonts" media="">
+    <!--<link rel="stylesheet" href="./assets/fonts" media="">-->
 	
     <!-- Bootstrap core CSS v3.3.7 -->
     <link href="<?= BASE_URL ;?>/assets/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 	
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  -->
     <!--font-awesome.min.css 41 New Icons in 4.7-->
-    <!--<link href="<?= BASE_URL ;?>/assets/font-awesome.min.css" rel="stylesheet">-->
+    <link href="<?= BASE_URL ;?>/assets/font-awesome.min.css" rel="stylesheet">
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
