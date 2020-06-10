@@ -1,4 +1,5 @@
 
+
 <?php
         $json = __DIR__ . "/../data/products.json";
 				
@@ -6,6 +7,13 @@
 		// and parse the string into a data structure
 		$str_data = file_get_contents($json);
 		$products = json_decode($str_data,true);
+
+function formatDollars($dollars)
+{
+    $formatted = "$" . number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $dollars)), 2);
+    return $dollars < 0 ? "({$formatted})" : "{$formatted}";
+}
+		
 ?>
 
 <?php 
@@ -50,7 +58,7 @@
 					</h3>
 				</div>
 				<div class="as-price-currentprice as-producttile-currentprice">
-					<?= ucfirst($item_prod['Price'] )  ;?>
+					<?= formatDollars($item_prod['Price'] ) ;?>
 				</div>
 			</div>
 			<form action="/detail.php" method="get">
