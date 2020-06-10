@@ -1,105 +1,66 @@
 
- <?php
-       $category_table = "SELECT *FROM category where parent =0";
-       $categories = mysqli_query($db, $category_table);
+<?php
+        $json = __DIR__ . "/../data/products.json";
+				
+		// Read the file contents into a string variable,  
+		// and parse the string into a data structure
+		$str_data = file_get_contents($json);
+		$products = json_decode($str_data,true);
+?>
 
-   ?>
+<?php 
+	foreach ($products as $item_prod):
+         $item_id = $item_prod['Id'];
+?>
+<div class="as-producttile large-4 small-6 group-1">
+		<div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
+			<div class="as-dummy-container as-dummy-img">
+				<img src="<?= ucfirst($item_prod['Image'] )  ;?>" 
+					class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
+			</div>
+			<div class="images mini-gallery gal1 ">
+				<ul class="clearfix as-producttile-nojs">
+					<li class="as-searchtile-nojs">
+						<img src="<?= ucfirst($item_prod['Image'] )  ;?>" 
+							class="ir relatedlink item-image as-producttile-image" alt="" width="445" height="445" 
+							data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1502831144597">
+					</li>
+				</ul>
+				<div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
+					<div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink">
+						<div class="as-tilegallery-element as-image-selected">
+							<div class=""></div>
+							<img src="<?= ucfirst($item_prod['Image'] )  ;?>" 
+								class="ir ir item-image as-producttile-image" alt="" 
+								data-desc="<?= ucfirst($item_prod['Description'] )  ;?>" 
+								style="content:-webkit-image-set(url(<?= ucfirst($item_prod['Image'] )  ;?>">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="as-producttile-info" style="min-height: 168px;">
+			<div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+				<div class="as-producttile-title">
+					<h3 class="as-producttile-name">
+						<p class="as-producttile-tilelink">
+							<span data-ase-truncate="2"><?= ucfirst($item_prod['Description'] )  ;?></span>
+						</p>
 
-
-<nav class="navbar navbar-default navbar-fixed-top" >
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header ">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand sirajulshop-logo-small" href="#"> <img src="images/logo/logo2.png"></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="<?=BASE_URL ?>">Home<span class="sr-only">(current)</span></a></li>
-
-        <?php foreach ($categories as  $parent_cat): ?>
-          <?php
-                 $parent_id = $parent_cat['id'];
-                 $childSql = "SELECT *FROM category where parent ='$parent_id'";
-                 $childs = mysqli_query($db, $childSql);
-                ?>
-        <li class="dropdown">
-
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$parent_cat['category']   ?><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-
-          <?php foreach ($childs as $child): ?>
-             <li><a href="category.php?category=<?= $child['id'] ?>"><?= $child['category'] ?></a></li>
-          <?php endforeach ?>
-          </ul>
-        </li>
-        <?php endforeach ?>
-         <li class="dropdown">
-          <a href="mycart.php" role="button" > Shoping cart <span class="glyphicon glyphicon-shopping-cart text-warning "></span ><sup class="badge">3</sup></a>
-
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
-          <ul class="dropdown-menu space-padd">
-            <li>
-              <div class="container-fluid col-md-12">
-  <div class="row">
-
-    <div class="main">
-
-      <h5>Please Log In, or <a href="#">Sign Up</a></h5>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6" >
-          <a href="#" class="btn btn-lg btn-primary btn-block" style="font-size: 1.5rem;">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block"  style="font-size: 1.5rem;">Google</a>
-        </div>
-      </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
-
-      <form role="form" action="admin/login.php">
-        <div class="form-group">
-          <label for="inputUsernameEmail">Username or email</label>
-          <input type="text" class="form-control" id="inputUsernameEmail">
-        </div>
-        <div class="form-group">
-          <a class="pull-right" href="#">Forgot password?</a>
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="checkbox pull-right">
-          <label>
-            <input type="checkbox">
-            Remember me </label>
-        </div>
-        <button type="submit" class="btn btn btn-primary">
-          Log In
-        </button>
-      </form>
-
-    </div>
-
-  </div>
+					</h3>
+				</div>
+				<div class="as-price-currentprice as-producttile-currentprice">
+					<?= ucfirst($item_prod['Price'] )  ;?>
+				</div>
+			</div>
+			<form action="/detail.php" method="get">
+				<input type="hidden" name="product" value="<?= ucfirst($item_prod['Id'] )  ;?>">
+				<input type="hidden" name="img" value="<?= ucfirst($item_prod['Image'] )  ;?>">
+				<input type="hidden" name="title" value="<?= ucfirst($item_prod['Description'] )  ;?>">
+				<input type="hidden" name="price" value="<?= ucfirst($item_prod['Price'] )  ;?>">
+				<input type="hidden" name="unit" value="<?= ucfirst($item_prod['UnitDefault'] )  ;?>">
+				<button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
+			</form>
+		</div>
 </div>
-
-  </li>
-   </ul>
-    </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<?php endforeach ?>

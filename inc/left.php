@@ -18,15 +18,12 @@
 	foreach ($categories as $item_cat):
          $item_id = $item_cat['Id'];
 ?>
-    
 	<li class="as-filter-item       ">
 		<a href="" class="as-filter-option  " 
 				aria-disabled="false" tabindex="0" 
 				role="checkbox" aria-checked="false">
-
 			<span class="as-filter-name">
 				<span class="as-search-filter-content">
-					<?=$item_id;?>
 					<span class="as-search-filter-text">
 						<?= ucfirst($item_cat['Name'] )  ;?>
 					</span>
