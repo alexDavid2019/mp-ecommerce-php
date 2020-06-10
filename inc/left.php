@@ -1,6 +1,29 @@
 
 <?php
-        $json = __DIR__ . "/data/categories.json";
+        $json = __DIR__ . "/../data/categories.json";
+		
+		if (file_exists($json)) {
+		echo "1.El fichero $json existe";
+		} else {
+		echo "1.El fichero $json no existe";
+		}
+
+		$json = "/data/categories.json";
+		
+		if (file_exists($json)) {
+		echo "2.El fichero $json existe";
+		} else {
+		echo "2.El fichero $json no existe";
+		}
+
+		$json = dirname(__FILE__) . '/data/categories.json';
+
+		if (file_exists($json)) {
+		echo "3.El fichero $json existe";
+		} else {
+		echo "3.El fichero $json no existe";
+		}
+
 		// Read the file contents into a string variable,  
 		// and parse the string into a data structure
 		$str_data = file_get_contents($json);
