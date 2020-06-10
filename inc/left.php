@@ -1,9 +1,9 @@
 
 <?php
-       $category_table = "./data/categories.json";
+       $json = "./data/categories.json";
 		// Read the file contents into a string variable,  
 		// and parse the string into a data structure
-		$str_data = file_get_contents("data.json");
+		$str_data = file_get_contents($json);
 		$categories = json_decode($str_data,true);
 ?>
 
