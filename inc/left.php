@@ -26,6 +26,7 @@
 
 			<span class="as-filter-name">
 				<span class="as-search-filter-content">
+					<?=$item_id;?>
 					<span class="as-search-filter-text">
 						<?= ucfirst($item_cat['Name'] )  ;?>
 					</span>
