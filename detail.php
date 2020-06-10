@@ -2,6 +2,14 @@
 <?php include 'functions/define.php'; ?>
 <?php include 'core/init.php'; ?>
 
+<?php
+function formatDollars($dollars)
+{
+    $formatted = "$" . number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $dollars)), 2);
+    return $dollars < 0 ? "({$formatted})" : "{$formatted}";
+}
+?>
+
 <!-- =============header.php========== -->
      <?php include_once ('inc/header.php'); ?>
 <!-- =============./header.php========== -->
@@ -60,15 +68,15 @@
                                         <div class="as-producttile-title">
                                             <h3 class="as-producttile-name">
                                                 <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
+                                                    <span data-ase-truncate="2"><?php echo "Producto:". $_POST['title'] ?></span>
                                                 </p>
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo $_POST['price'] ?>
+                                            <?php echo "Precio final:".formatDollars($_POST['price']) ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo $_POST['unit'] ?>
+                                            <?php echo "Cantidad:".$_POST['unit'] ?>
                                         </h3>
                                     </div>
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
