@@ -1,10 +1,10 @@
 
 <?php
-       $json = __DIR__ . "/../data/categories.json";
-
+        //$json = __DIR__ . "/../data/categories.json";
+		$json = "./data/categories.json";
 		// Read the file contents into a string variable,  
 		// and parse the string into a data structure
-		$str_data = file_get_contents($json);
+		$str_data = file_get_contents($json, true);
 		$categories = json_decode($str_data,true);
 ?>
 
