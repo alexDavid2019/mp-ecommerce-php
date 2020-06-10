@@ -26,7 +26,7 @@
 	
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  -->
     <!--font-awesome.min.css 41 New Icons in 4.7-->
-    <link href="<?= BASE_URL ;?>/assets/font-awesome.min.css" rel="stylesheet">
+    <!--<link href="<?= BASE_URL ;?>/assets/font-awesome.min.css" rel="stylesheet">-->
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
