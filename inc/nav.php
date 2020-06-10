@@ -10,10 +10,29 @@ $productsBase = json_decode($str_data,true);
 $products = array();
 if (setGet('search') && !empty(get('search'))) {
 	$categoryName = get('search');
+	$arrFiltred = array(); 
+	foreach ($productsBase as $item_prod){
+         if ($item_prod['Category'] == $categoryName){
+			 	array_push($arrFiltred, $item_prod);
+		 }
+	}
 	
-	$arrFiltred = array_filter($productsBase, function ($p) {
-		return $p->Category == $categoryName;
-	});
+	/*
+	$inputs = [
+	  'first'    => 'John',
+	  'last'     => 'Doe',
+	  'password' => 'secret',
+	  'email'    => 'john.doe@example.com'
+	];
+	 
+	$filtered = array_filter($inputs, function ($key) {
+		return $key !== 'password';
+	}, ARRAY_FILTER_USE_KEY);
+
+	$filtered = array_filter($inputs, function ($value, $key) {
+		return $value !== '' && $key !== 'password';
+	}, ARRAY_FILTER_USE_BOTH);
+	*/
 	if (!empty($arrFiltred)){
 		$products = $arrFiltred;
 	}
