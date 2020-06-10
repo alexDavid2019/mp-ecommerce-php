@@ -19,7 +19,7 @@
          $item_id = $item_cat['Id'];
 ?>
 	<li class="as-filter-item       ">
-		<a href="" class="as-filter-option  " 
+		<a href="/?search=<?= ucfirst($item_cat['Name'] )  ;?>" class="as-filter-option  " 
 				aria-disabled="false" tabindex="0" 
 				role="checkbox" aria-checked="false">
 			<span class="as-filter-name">

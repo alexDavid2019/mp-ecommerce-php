@@ -1,17 +1,27 @@
-
+<?php include 'helpers/helper.php'; ?>
 
 <?php
-        $json = __DIR__ . "/../data/products.json";
-				
-		// Read the file contents into a string variable,  
-		// and parse the string into a data structure
-		$str_data = file_get_contents($json);
-		$products = json_decode($str_data,true);
-
-function formatDollars($dollars)
-{
-    $formatted = "$" . number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $dollars)), 2);
-    return $dollars < 0 ? "({$formatted})" : "{$formatted}";
+$json = __DIR__ . "/../data/products.json";
+		
+// Read the file contents into a string variable,  
+// and parse the string into a data structure
+$str_data = file_get_contents($json);
+$productsBase = json_decode($str_data,true);
+$products = array();
+if (setGet('search') && !empty(get('search'))) {
+	$categoryName = get('search');
+	
+	$arrFiltred = array_filter($productsBase, function ($p) {
+		return $p->Category == $categoryName;
+	});
+	if (!empty($arrFiltred)){
+		$products = $arrFiltred;
+	}
+	else {
+		$products = $productsBase;
+	}
+} else {
+	$products = $productsBase;
 }
 		
 ?>

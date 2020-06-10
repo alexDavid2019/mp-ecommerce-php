@@ -1,14 +1,7 @@
 
 <?php include 'functions/define.php'; ?>
 <?php include 'core/init.php'; ?>
-
-<?php
-function formatDollars($dollars)
-{
-    $formatted = "$" . number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $dollars)), 2);
-    return $dollars < 0 ? "({$formatted})" : "{$formatted}";
-}
-?>
+<?php include 'helpers/helper.php'; ?>
 
 <!-- =============header.php========== -->
      <?php include_once ('inc/header.php'); ?>
