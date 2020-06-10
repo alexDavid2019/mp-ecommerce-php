@@ -7,7 +7,8 @@ $json = __DIR__ . "/../data/products.json";
 // and parse the string into a data structure
 $str_data = file_get_contents($json);
 $productsBase = json_decode($str_data,true);
-$products = array();
+//by default-- show all products
+$products = $productsBase;
 if (setGet('search') && !empty(get('search'))) {
 	$categoryName = get('search');
 	$arrFiltred = array(); 
@@ -15,34 +16,12 @@ if (setGet('search') && !empty(get('search'))) {
          if ($item_prod['Category'] == $categoryName){
 			 	array_push($arrFiltred, $item_prod);
 		 }
-	}
-	
-	/*
-	$inputs = [
-	  'first'    => 'John',
-	  'last'     => 'Doe',
-	  'password' => 'secret',
-	  'email'    => 'john.doe@example.com'
-	];
-	 
-	$filtered = array_filter($inputs, function ($key) {
-		return $key !== 'password';
-	}, ARRAY_FILTER_USE_KEY);
-
-	$filtered = array_filter($inputs, function ($value, $key) {
-		return $value !== '' && $key !== 'password';
-	}, ARRAY_FILTER_USE_BOTH);
-	*/
+	}	
 	if (!empty($arrFiltred)){
 		$products = $arrFiltred;
 	}
-	else {
-		$products = $productsBase;
-	}
-} else {
-	$products = $productsBase;
 }
-		
+
 ?>
 
 <?php 
