@@ -1,5 +1,5 @@
 
-<?php  $ad=$_SERVER['DOCUMENT_ROOT'];?>
+
 <?php include 'functions/define.php'; ?>
 <?php include 'core/init.php'; ?>
 

@@ -1,6 +1,6 @@
 
 <?php
-       $json = __DIR__ . "/data/categories.json";
+       $json = __DIR__ . "/../data/categories.json";
 
 		// Read the file contents into a string variable,  
 		// and parse the string into a data structure
