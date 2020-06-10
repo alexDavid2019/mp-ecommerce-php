@@ -1,0 +1,34 @@
+{
+	"category":
+    [
+        {
+			"Name": "Apple",
+            "Id" : "0001"
+        },
+        {
+			"Name": "LG",
+            "Id" : "0002"
+        },
+        {
+			"Name": "Motorola",
+            "Id" : "0003"
+        },
+        {
+			"Name": "Samsung",
+            "Id" : "0004"
+        },
+        {
+			"Name": "Huawei",
+            "Id" : "0005"
+        },
+        {
+			"Name": "Sony",
+            "Id" : "0006"
+        },
+        {
+			"Name": "Sony",
+            "Id" : "0007"
+        },
+
+	]
+}

@@ -1,83 +1,42 @@
-  <?php
-       $category_table = "SELECT *FROM category where parent =0";
-       $categories = mysqli_query($db, $category_table);
-       
-       //for brand
-       $brand_table = "SELECT *FROM brands";
-       $brands = mysqli_query($db, $brand_table);
 
-   ?>
+<?php
+       $category_table = "./data/categories.json";
+		// Read the file contents into a string variable,  
+		// and parse the string into a data structure
+		$str_data = file_get_contents("data.json");
+		$categories = json_decode($str_data,true);
+?>
 
- <!--left side category -->
-<div class=" col-md-2  " style="padding-left: 0px;padding-right: 0px;"><h4 class="text-center" style="color:#BED2CB;">Follow Us</h4>
- <hr>
- <div class="nav" style="padding-bottom:10px">
-   <ul class="social text-center" style=" list-style: none;">
-      <li> <a href="#"> <i class="fa fa-facebook">   </i> </a> </li>
-       <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-        <li> <a href="#"> <i class="fa fa-google">   </i> </a> </li>
-         <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-       </ul>
-    </div>
+<materializer data-uid="as-accordion-id0" id="as-accordion-id0" data-show-height="computed" 
+				data-hide-height="0" class="as-search-facet-materializer ase-materializer ase-materializer-show" 
+				data-shown-init="true" style="">
+<div class="as-accordion-content">
+	<ul class="as-search-filter-items  as-filter-text-type    ">
 
-<!--==========brand==========-->
-
-     <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-primary " style="border: none;
-;border-radius: none;box-shadow:none;">
-        <div class="panel-heading panel-bg-change">
-          <h3 class="panel-title">BRAND</h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
-        </div>
-        <div class="panel-body" style="display: none;">
-
-             <ul class="nav">
-              <?php foreach ($brands as $brand): ?>
-            <li><a href="brand.php?brand=<?=$brand['id']?>"><?= $brand['brand'] ?></a></li>
-
-            <?php endforeach ?>
-           
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-          
-
-        </div>
-      </div>
-    </div>
-  </div>
-<!--/============brand===========-->
-
- <?php foreach ($categories as  $parent_cat):
-                 $parent_id = $parent_cat['id'];
-                 $childSql = "SELECT *FROM category where parent ='$parent_id'";
-                 $childs = mysqli_query($db, $childSql);
-
-                   ?>
+<?php 
+	foreach ($categories as $item_cat):
+         $item_id = $item_cat['Id'];
+?>
     
-    <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-primary  " style="border: none;
-;border-radius: none;box-shadow:none;">
-        <div class="panel-heading  " style=" background: #F0D22C;">
-          <h3 class="panel-title"><?= ucfirst($parent_cat['category'] )  ;?></h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
-        </div>
-        <div class="panel-body" style="display: none;">
+	<li class="as-filter-item       ">
+		<a href="" class="as-filter-option  " 
+				aria-disabled="false" tabindex="0" 
+				role="checkbox" aria-checked="false">
 
-             <ul class="nav">
-              <?php foreach ($childs as $child): ?>
-            <li><a href="category.php?category=<?=$child['id'] ?>"><?= $child['category'] ?></a></li>
+			<span class="as-filter-name">
+				<span class="as-search-filter-content">
+					<span class="as-search-filter-text">
+						<?= ucfirst($item_cat['Name'] )  ;?>
+					</span>
+				</span>
+			</span>
+		</a>
+	</li>
 
-            <?php endforeach ?> 
-           
-            <li><a href="category.php?parent-category=<?=$parent_id ?>">One more separated link</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    </div>
-
-     <?php endforeach ?>
-  
-</div><!--./left side category col-md-2 -->
+<?php endforeach ?>
+</materializer>
+	</ul>
+	<button class="as-searchmoreless-toggle as-searchfilter-morebutton  as-search-more" id="iPad Compatibility_more">
+		<span class="as-search-morelessbutton-text">More</span>
+	</button>
+</div>

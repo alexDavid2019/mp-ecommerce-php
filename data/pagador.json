@@ -1,0 +1,16 @@
+{
+	"pagador":
+    [
+        {
+            "Id" : "535650015",
+            "Name": "Lalo Landa",
+            "Email": "test_user_58295862@testuser.com",
+            "Password": "qatest9980",
+			"Area": "52",
+			"Phone": "5549737300",
+			"Address": "Insurgentes Sur",
+			"Number": "1602",
+			"cp": "03940"
+        }		
+	]
+}

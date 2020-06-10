@@ -1,0 +1,159 @@
+{
+	"product":
+    [
+        {
+			"Category": "Apple",
+            "Id" : "0001",
+            "Name": "SamsungGalaxyS9",
+            "Description": "Samsung Galaxy  ",
+            "Image": "./assets/img/samsung-galaxy-s9-xxl.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "15000"
+        },
+
+        {
+			"Category": "Apple",
+            "Id" : "0002",
+            "Name": "LGG6",
+            "Description": "LG G6",
+            "Image": "./assets/img/l6g6.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "10000"
+        },
+
+        {
+			"Category": "Apple",
+            "Id" : "0003",
+            "Name": "iPhone8",
+            "Description": "iPhone 8",
+            "Image": "./assets/img/u_10168742.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "16000"
+        },
+
+        {
+			"Category": "Apple",
+            "Id" : "0004",
+            "Name": "MotorolaG5",
+            "Description": "Motorola G5",
+            "Image": "./assets/img/motorola-moto-g5-plus-1.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "9000"
+        },
+
+        {
+			"Category": "Apple",
+            "Id" : "0005",
+            "Name": "MotoG4",
+            "Description": "Moto G4",
+            "Image": "./assets/img/motorola-moto-g4-3.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "8000"
+        },
+
+        {
+			"Category": "Apple",
+            "Id" : "0006",
+            "Name": "SonyXperiaXZ2",
+            "Description": "Sony Xperia XZ2",
+            "Image": "./assets/img/003.jpg",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "10000"
+        },
+		
+
+        {
+			"Category": "LG",
+            "Id" : "0007",
+            "Name": "NokiaC5Endi",
+            "Description": "Nokia C5 Endi",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/6gOkCAE0TZCbAS59BgNsJP/047352d1aae54e0c4f5602293388de66/nokia_C5_endi-front-blue.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "20000"
+        },
+
+        {
+			"Category": "LG",
+            "Id" : "0008",
+            "Name": "NokiaC2Tava",
+            "Description": "Nokia C2 Tava",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/7gOs8YpWciIA2ScgOqxjps/f44d8c2fdc40d0fd904ceeb3d6507e49/nokia_C2_tava-front-blue.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "20000"
+        },
+
+        {
+			"Category": "LG",
+            "Id" : "0009",
+            "Name": "NokiaC2Tennen",
+            "Description": "Nokia C2 Tennen",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/1zu1WxEJzgVauElGvt4BWE/58427f4ab3b8d9b22dd6790e387670eb/nokia_C2_tennen-back-steel.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "20500"
+        },
+
+        {
+			"Category": "LG",
+            "Id" : "0010",
+            "Name": "Nokia835G",
+            "Description": "Nokia 8.3 5G",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/73fAOjLsZSpZoOhl7ePaIP/c7ed9ff8e403729ab694ae83b649da3b/nokia_8_3_5g-emotional-PolarNight.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "18000"
+        },
+
+        {
+			"Category": "LG",
+            "Id" : "0011",
+            "Name": "Nokia72",
+            "Description": "Nokia 7.2",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/231akKP1bbckaAzwUVGWzN/309a999f3e755ab04bc8aa67bffc5729/nokia_7_2-emotional.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "25000"
+        },
+
+        {
+			"Category": "Motorola",
+            "Id" : "0012",
+            "Name": "Nokia150",
+            "Description": "Nokia 150",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/6BK8t72liWXIxifgeAsNau/333e218e430cf9aeecbfa14eaee4376c/nokia_150-emotional.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "800"
+        },
+
+        {
+			"Category": "Motorola",
+            "Id" : "0013",
+            "Name": "Nokia5310",
+            "Description": "Nokia 5310",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/6zmrIUsiXTbubLQYbKPyJp/ab3080623333a2df4e45f3f4bd4134f5/nokia_5310-front-white.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "1800"
+        },
+
+        {
+			"Category": "Motorola",
+            "Id" : "0014",
+            "Name": "Nokia2720Flip",
+            "Description": "Nokia 2720 Flip",
+            "Image": "https://images.ctfassets.net/d6skzop43my5/3z0cCg2wmyqNLz6qLX8ooR/1285ded5860f331f8a0ebae4a61eaaad/nokia_2720-emotional.png",
+			"Stock": "5",
+			"UnitDefault": "1",
+			"Price": "900"
+        }		
+	]
+}

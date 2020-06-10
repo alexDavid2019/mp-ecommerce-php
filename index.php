@@ -38,7 +38,9 @@
                         <div class="as-searchnav-placeholder" style="height: 77px;">
                             <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
                                 <div class="as-accessories-filter-tile column large-6 small-3">
-                                    <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
+                                    <button class="as-filter-button" 
+											aria-expanded="true" aria-controls="as-search-filters" 
+											type="button">
                                         <h2 class=" as-filter-button-text">
                                             Smartphones
                                         </h2>
@@ -51,9 +53,14 @@
                                 <div class="as-search-filter-container" style="transform: translate3d(0px, 0px, 0px);">
                                     <ul class="as-accordion-list">
                                         <li class="as-accordion-item">
-                                            <div id="facet0" class="as-search-facet iPad Compatibility  as-search-facet-expandable">
-                                                <div class="as-accordion-header as-search-accordion-header as-accordion-isexpanded " data-ase-materializer="as-accordion-id0" data-ase-click="toggle">
-                                                    <button id="as-accordion-header-button0" class="as-accordion-button" aria-controls="as-accordion-id0" aria-expanded="true" aria-labelledby="as-accordion-label-id0">
+                                            <div class="as-search-facet iPad Compatibility  as-search-facet-expandable">
+                                                <div class="as-accordion-header as-search-accordion-header as-accordion-isexpanded " 
+													data-ase-materializer="as-accordion-id0" 
+													data-ase-click="toggle">
+                                                    <button id="as-accordion-header-button0" 
+															class="as-accordion-button" 
+															aria-controls="as-accordion-id0" aria-expanded="true" 
+															aria-labelledby="as-accordion-label-id0">
                                                         <span id="as-accordion-label-id0" class="as-accordion-title">
                                                             <span class="as-search-accordion-title">Marca</span>
                                                         </span>
@@ -62,88 +69,14 @@
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <materializer data-uid="as-accordion-id0" id="as-accordion-id0" data-show-height="computed" data-hide-height="0" class="as-search-facet-materializer ase-materializer ase-materializer-show" data-shown-init="true" style="">
-                                                    <div class="as-accordion-content">
-                                                        <ul class="as-search-filter-items  as-filter-text-type    ">
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_12_9_2, " role="checkbox" aria-checked="false">
-
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                Apple
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_12_9, " role="checkbox" aria-checked="false">
-
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                LG
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_10_5, " role="checkbox" aria-checked="false">
-
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                Motorola
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_9_7, " role="checkbox" aria-checked="false">
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                Samsung
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipad_9_7, " role="checkbox" aria-checked="false">
-
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                Huawei
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="as-filter-item       ">
-                                                                <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipad6gen, " role="checkbox" aria-checked="false">
-
-                                                                    <span class="as-filter-name">
-                                                                        <span class="as-search-filter-content">
-                                                                            <span class="as-search-filter-text">
-                                                                                Sony
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <button class="as-searchmoreless-toggle as-searchfilter-morebutton  as-search-more" id="iPad Compatibility_more">
-                                                            <span class="as-search-morelessbutton-text">More</span>
-                                                        </button>
-                                                    </div>
-                                                </materializer>
-                                            </div>
+												
+												<!-- =============left.php========== -->
+												<?php include_once('inc/left.php') ?>
+												<!-- =============./left.php========== -->
+												
+											</div>
                                         </li>
+                                        
                                         <li class="as-accordion-item">
                                             <div id="facet1" class="as-search-facet iPhone Compatibility  as-search-facet-expandable">
                                                 <div class="as-accordion-header as-search-accordion-header" data-ase-materializer="as-accordion-id1" data-ase-click="toggle">
@@ -158,6 +91,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        
                                         <li class="as-accordion-item">
                                             <div id="facet2" class="as-search-facet iPod Compatibility ">
                                                 <div class="as-accordion-header as-search-accordion-header" data-ase-materializer="as-accordion-id2" data-ase-click="toggle">
@@ -165,6 +99,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -187,7 +122,8 @@
                                                 <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="2|Beats Studio3 Wireless Over‑Ear Headphones - Shadow Gray|MQUF2">
                                                     <div class="as-tilegallery-element as-image-selected">
                                                         <div class=""></div>
-                                                        <img src="./assets/samsung-galaxy-s9-xxl.jpg" class="ir ir item-image as-producttile-image" alt="" data-desc="Samsung galaxy" style="content:-webkit-image-set(url(https://md6.pricebaba.com/images/product/mobile/46638/samsung-galaxy-s9-xxl.jpg">
+                                                        <img src="./assets/samsung-galaxy-s9-xxl.jpg" class="ir ir item-image as-producttile-image" alt="" data-desc="Samsung galaxy" 
+                                                        style="content:-webkit-image-set(url(https://md6.pricebaba.com/images/product/mobile/46638/samsung-galaxy-s9-xxl.jpg">
                                                     </div>
                                                     
                                                 </div>
