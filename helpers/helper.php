@@ -96,11 +96,15 @@ function write_general_log($content, $file){
 
 		if (gettype($content) == 'string') {
 			$json = json_encode(array('file' => $file, 'data' => json_decode($content, true)), JSON_PRETTY_PRINT);
+			error_log($json);
+
 			if (file_put_contents($general, $json)) {
 				return true;
 			}
 		} else {
 			$json = json_encode(array('file' => $file, 'data' => $content), JSON_PRETTY_PRINT);
+			error_log($json);
+			
 			if (file_put_contents($general, $json)) {
 				return true;
 			}
