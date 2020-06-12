@@ -66,9 +66,7 @@ function generateRandomString($length = 8) {
 
 function write_json_log($content, $file){
     
-	//$file2 = fopen($file,"w+");
-	//echo fwrite($file,$content);
-	//fclose($file2);
+	file_fix_directory(dirname($file));
 	
     if (gettype($content) == 'string') {
         $json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
@@ -89,7 +87,7 @@ function file_fix_directory($dir, $nomask = array('.', '..')) {
   if (is_dir($dir)) {
      // Try to make each directory world writable.
      if (@chmod($dir, 0777)) {
-       echo "<p>Made writable: " . $dir . "</p>";
+       //echo "<p>Made writable: " . $dir . "</p>";
      }
   }
   if (is_dir($dir) && $handle = opendir($dir)) {
@@ -103,7 +101,7 @@ function file_fix_directory($dir, $nomask = array('.', '..')) {
           $filename = "$dir/$file";
             // Try to make each file world writable.
             if (@chmod($filename, 0666)) {
-              echo "<p>Made writable: " . $filename . "</p>";
+              //echo "<p>Made writable: " . $filename . "</p>";
             }
         }
       }
