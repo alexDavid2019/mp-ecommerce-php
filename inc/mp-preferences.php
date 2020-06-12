@@ -140,7 +140,7 @@ $preference_point = "";
 $preference_search = $mercadopago->searchPreferencies($preference['collector_id']);
 write_json_log($preference_search, DIR_MP_LOG . "search-".$preference['collector_id']."-".date('Y-m-d').".json");
 
-if (is_array($preference_saved) && array_key_exists('init_point', $preference_saved) && ON_DEV == false) {
+if (is_array($preference_saved) && array_key_exists('init_point', $preference_saved)) {
     $preference_id = $preference_saved['id'];
     $preference_notify=$preference_saved['notification_url'];
     $preference_point=$preference_saved['init_point'];
