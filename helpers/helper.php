@@ -65,23 +65,51 @@ function generateRandomString($length = 8) {
 };
 
 function write_json_log($content, $file){
-    
-	file_fix_directory(dirname($file));
-	
-    if (gettype($content) == 'string') {
-        $json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
-        if (file_put_contents($file, $json)) {
-            return true;
-        }
-    } else {
-        $json = json_encode(array('data' => $content), JSON_PRETTY_PRINT);
-        if (file_put_contents($file, $json)) {
-            return true;
-        }
-    }
-    return false;
+    	
+	try {
+		file_fix_directory(dirname($file));
+
+		if (gettype($content) == 'string') {
+			$json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
+			if (file_put_contents($file, $json)) {
+				return true;
+			}
+		} else {
+			$json = json_encode(array('data' => $content), JSON_PRETTY_PRINT);
+			if (file_put_contents($file, $json)) {
+				return true;
+			}
+		}
+		return false;
+	} catch (Exception $e) {
+		write_general_log($content, $file);
+	}
 }
 
+
+function write_general_log($content, $file){
+    	
+	try {
+		$general = DIR_MP_LOG . "general.log");
+
+		file_fix_directory(dirname($general));
+
+		if (gettype($content) == 'string') {
+			$json = json_encode(array('file' => $file, 'data' => json_decode($content, true)), JSON_PRETTY_PRINT);
+			if (file_put_contents($general, $json)) {
+				return true;
+			}
+		} else {
+			$json = json_encode(array('file' => $file, 'data' => $content), JSON_PRETTY_PRINT);
+			if (file_put_contents($general, $json)) {
+				return true;
+			}
+		}
+		return false;
+	} catch (Exception $e) {
+		echo($e->getMessage);
+	}
+}
 
 function file_fix_directory($dir, $nomask = array('.', '..')) {
   if (is_dir($dir)) {
