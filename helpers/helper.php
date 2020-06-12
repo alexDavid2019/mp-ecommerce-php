@@ -66,6 +66,10 @@ function generateRandomString($length = 8) {
 
 function write_json_log($content, $file){
     
+	$file2 = fopen($file,"w+");
+	//echo fwrite($file,$content);
+	fclose($file2);
+
     if (gettype($content) == 'string') {
         $json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
         if (file_put_contents($file, $json)) {
