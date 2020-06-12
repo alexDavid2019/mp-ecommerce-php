@@ -66,10 +66,10 @@ function generateRandomString($length = 8) {
 
 function write_json_log($content, $file){
     
-	$file2 = fopen($file,"w+");
+	//$file2 = fopen($file,"w+");
 	//echo fwrite($file,$content);
-	fclose($file2);
-
+	//fclose($file2);
+	
     if (gettype($content) == 'string') {
         $json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
         if (file_put_contents($file, $json)) {
@@ -82,6 +82,34 @@ function write_json_log($content, $file){
         }
     }
     return false;
+}
+
+
+function file_fix_directory($dir, $nomask = array('.', '..')) {
+  if (is_dir($dir)) {
+     // Try to make each directory world writable.
+     if (@chmod($dir, 0777)) {
+       echo "<p>Made writable: " . $dir . "</p>";
+     }
+  }
+  if (is_dir($dir) && $handle = opendir($dir)) {
+    while (false !== ($file = readdir($handle))) {
+      if (!in_array($file, $nomask) && $file[0] != '.') {
+        if (is_dir("$dir/$file")) {
+          // Recurse into subdirectories
+          file_fix_directory("$dir/$file", $nomask);
+        }
+        else {
+          $filename = "$dir/$file";
+            // Try to make each file world writable.
+            if (@chmod($filename, 0666)) {
+              echo "<p>Made writable: " . $filename . "</p>";
+            }
+        }
+      }
+    }
+    closedir($handle);
+  }
 }
 
 function rel2abs($rel, $base)

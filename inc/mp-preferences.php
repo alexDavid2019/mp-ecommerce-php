@@ -1,6 +1,10 @@
 <?php include 'inc/MPApi.php'; ?>
 <?php 
 
+//file_fix_directory(dirname(__FILE__));
+file_fix_directory(DIR_DATA);
+file_fix_directory(DIR_MP_LOG);
+
 //creamos una transaccion aleatorea para identificar el proceso.
 $transaccionID = "TX-".generateRandomString();
 
