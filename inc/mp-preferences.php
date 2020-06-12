@@ -114,6 +114,10 @@ $nday = time() + ( 24 * 60 * 60);
 $today = date('Y-m-d');
 $nextday = date('Y-m-d',$nday);
 
+$date_next = strtotime('+1 day', strtotime($today));
+$date_next = date('Y-m-d', $date_past);
+
+
 $date_past = strtotime('-1 day', strtotime($today));
 $date_past = date('Y-m-d', $date_past);
 
@@ -125,8 +129,8 @@ $preference['payment_methods'] = $payment_options;
 $preference['auto_return'] = "all"; //"approved";
 //$preference['binary_mode'] = false;
 $preference['expires'] = false;                 //Preferencia que determina si una preferencia expira.
-//$preference['expiration_date_from'] = $date_past;   //Fecha a partir de la cual la preferencia estará activa.
-//$preference['expiration_date_to'] = $nextday;   //Fecha en la que la preferencia expirará.
+$preference['expiration_date_from'] = $date_past;   //Fecha a partir de la cual la preferencia estará activa.
+$preference['expiration_date_to'] = $date_next;   //Fecha en la que la preferencia expirará.
 $preference['metadata'] = array("checkout"=> "smart", "checkout_type" => "redirect");
 
 //Enviar los datos al API de Mercado Pago para la generación del link
