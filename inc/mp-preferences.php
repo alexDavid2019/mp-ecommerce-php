@@ -115,7 +115,7 @@ $today = date('Y-m-d');
 $nextday = date('Y-m-d',$nday);
 
 $date_next = strtotime('+1 day', strtotime($today));
-$date_next = date('Y-m-d', $date_past);
+$date_next = date('Y-m-d', $date_next);
 
 
 $date_past = strtotime('-1 day', strtotime($today));
