@@ -90,7 +90,7 @@ function write_json_log($content, $file){
 function write_general_log($content, $file){
     	
 	try {
-		$general = dirname($file) . "general.log");
+		$general = dirname($file) . "general.log";
 
 		file_fix_directory(dirname($general));
 
