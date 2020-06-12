@@ -35,7 +35,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="as-accessories-results  as-search-desktop">
                             <div class="width:60%;max-width: 60%;">
                                 <div class="as-producttile-tilehero with-paddlenav " style="float:left;max-width: 60%;">
@@ -56,6 +55,9 @@
                                         </div>
                                     </div>
                                 </div>
+        
+        						<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+        						
                                 <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                     <div class="as-producttile-titlepricewraper">
                                         <h4>
@@ -68,16 +70,22 @@
                                             <span>Cantidad: </span><?php echo $_POST['unit'] ?>
                                         </h4>
                                     </div>
-                        			<form action="<?= BASE_URL  ;?>/payment.php" method="post">
-                        				<input type="hidden" name="productId" value="<?= ($_POST['productId'] )  ;?>">
-                        				<input type="hidden" name="img" value="<?= ($_POST['img'] )  ;?>">
-                        				<input type="hidden" name="title" value="<?= ($_POST['title'] )  ;?>">
-                        				<input type="hidden" name="price" value="<?= ($_POST['price'] )  ;?>">
-                        				<input type="hidden" name="unit" value="<?= ($_POST['unit'] )  ;?>">
-                        				<button type="submit" class="mercadopago-button" formmethod="post">Pagar la compra</button>
-                        			</form>
-			                                    
-                                </div>
+
+
+                        			<!-- =============mp-preferences.php========== -->
+                        				 <?php include_once ('inc/mp-preferences.php'); ?>
+                        			<!-- =============./mp-preferences.php========== -->
+                                    <!-- 
+                                    <form action="/procesar-pago.php" method="POST">
+                                      <script
+                                       src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+                                       data-preference-id="<?php echo $preference_id; ?>" 
+                                       data-button-label="Pagar la compra">
+                                      </script>
+                                    </form>
+                                     -->
+                                     <a href="<?php echo $preference_point; ?>" class="mercadopago-button" style="font-size: 20px;">Pagar la compra</a>
+                                   </div>
                             </div>
                         </div>
                     </div>
@@ -86,8 +94,6 @@
         </div>
 		
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
-        
-        <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
         
 </div>
 

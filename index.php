@@ -106,6 +106,8 @@
             </div>
         </div>
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
+        <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+        
 </div>
 
 <!-- =============footer.php========== -->

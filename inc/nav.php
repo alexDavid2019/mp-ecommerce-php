@@ -1,12 +1,12 @@
 <?php include 'helpers/helper.php'; ?>
 
 <?php
-$json = __DIR__ . "/../data/products.json";
-		
-// Read the file contents into a string variable,  
-// and parse the string into a data structure
+
+
+$json = DIR_DATA . "products.json";
 $str_data = file_get_contents($json);
 $productsBase = json_decode($str_data,true);
+
 //by default-- show all products
 $products = $productsBase;
 if (setGet('search') && !empty(get('search'))) {
@@ -22,9 +22,6 @@ if (setGet('search') && !empty(get('search'))) {
 	}
 }
 
-?>
-
-<?php 
 	foreach ($products as $item_prod):
          $item_id = $item_prod['Id'];
 ?>
@@ -69,8 +66,8 @@ if (setGet('search') && !empty(get('search'))) {
 					<?= formatDollars($item_prod['Price'] ) ;?>
 				</div>
 			</div>
-			<form action="/detail.php" method="get">
-				<input type="hidden" name="product" value="<?= ucfirst($item_prod['Id'] )  ;?>">
+			<form action="<?= BASE_URL  ;?>/detail.php" method="get">
+				<input type="hidden" name="productId" value="<?= ucfirst($item_prod['Id'] )  ;?>">
 				<input type="hidden" name="img" value="<?= ucfirst($item_prod['Image'] )  ;?>">
 				<input type="hidden" name="title" value="<?= ucfirst($item_prod['Description'] )  ;?>">
 				<input type="hidden" name="price" value="<?= ucfirst($item_prod['Price'] )  ;?>">

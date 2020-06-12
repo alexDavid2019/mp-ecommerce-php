@@ -1,11 +1,7 @@
-
 <?php
-        $json = __DIR__ . "/../data/categories.json";
-				
-		// Read the file contents into a string variable,  
-		// and parse the string into a data structure
-		$str_data = file_get_contents($json);
-		$categories = json_decode($str_data,true);
+    $json = DIR_DATA . "categories.json";
+	$str_data = file_get_contents($json);
+	$categories = json_decode($str_data,true);
 ?>
 
 <materializer data-uid="as-accordion-id0" id="as-accordion-id0" data-show-height="computed" 
@@ -19,7 +15,7 @@
          $item_id = $item_cat['Id'];
 ?>
 	<li class="as-filter-item       ">
-		<a href="/?search=<?= ucfirst($item_cat['Name'] )  ;?>" class="as-filter-option  " 
+		<a href="<?= BASE_URL  ;?>/?search=<?= ucfirst($item_cat['Name'] )  ;?>" class="as-filter-option  " 
 				aria-disabled="false" tabindex="0" 
 				role="checkbox" aria-checked="false">
 			<span class="as-filter-name">
