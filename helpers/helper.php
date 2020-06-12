@@ -71,11 +71,13 @@ function write_json_log($content, $file){
 
 		if (gettype($content) == 'string') {
 			$json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
+			file_put_contents("php://stderr", $json);
 			if (file_put_contents($file, $json)) {
 				return true;
 			}
 		} else {
 			$json = json_encode(array('data' => $content), JSON_PRETTY_PRINT);
+			file_put_contents("php://stderr", $json);
 			if (file_put_contents($file, $json)) {
 				return true;
 			}
