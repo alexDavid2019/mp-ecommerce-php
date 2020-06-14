@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
         
-        						<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+        						<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
         						
                                 <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                     <div class="as-producttile-titlepricewraper">

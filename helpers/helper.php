@@ -67,7 +67,7 @@ function generateRandomString($length = 8) {
 function write_json_log($content, $file){
     	
 	try {
-		file_fix_directory(dirname($file));
+		//file_fix_directory(dirname($file));
 
 		if (gettype($content) == 'string') {
 			$json = json_encode(array('data' => json_decode($content, true)), JSON_PRETTY_PRINT);
@@ -94,25 +94,26 @@ function write_general_log($content, $file){
 	try {
 		$general = dirname($file) . "general.log";
 
-		file_fix_directory(dirname($general));
+		//file_fix_directory(dirname($file));
 
 		if (gettype($content) == 'string') {
 			$json = json_encode(array('file' => $file, 'data' => json_decode($content, true)), JSON_PRETTY_PRINT);
 			//error_log($json);
-			file_put_contents("php://stderr", $json);
-			if (file_put_contents($general, $json)) {
+			file_put_contents("php://stderr", $json,FILE_APPEND);
+			if (file_put_contents($general, $json, LOCK_EX)) {
 				return true;
 			}
 		} else {
 			$json = json_encode(array('file' => $file, 'data' => $content), JSON_PRETTY_PRINT);
 			//error_log($json);
-			file_put_contents("php://stderr", $json);
-			if (file_put_contents($general, $json)) {
+			file_put_contents("php://stderr", $json,FILE_APPEND);
+			if (file_put_contents($general, $json, LOCK_EX)) {
 				return true;
 			}
 		}
 		return false;
 	} catch (Exception $e) {
+	    file_fix_directory(dirname($file));
 		echo($e->getMessage);
 	}
 }
