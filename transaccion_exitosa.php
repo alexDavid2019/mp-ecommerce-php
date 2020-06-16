@@ -48,6 +48,9 @@ write_json_log(array('collection_id' => $_GET["collection_id"],
                         'site_id' => $_GET["site_id"],
                         'processing_mode' => $_GET["processing_mode"]), DIR_MP_LOG . "transac-exitosas-".date('Y-m-d').".json");
 
+$payment_info = $mercadopago->getPaymentStandard($_GET["collection_id"]);
+write_json_log($payment_info, DIR_MP_LOG . "PaymentStandard-".$_GET["collection_id"]."-out-".date('Y-m-d').".json");
+
 $merchant_order_info = $mercadopago->getMerchantOrder($_GET["merchant_order_id"]);
 write_json_log($merchant_order_info, DIR_MP_LOG . "MerchantOrder-".$_GET["merchant_order_id"]."-out-".date('Y-m-d').".json");
 
@@ -98,13 +101,29 @@ foreach ($merchant_order_info["items"] as $item_prod):
                     						<h3 style="color:green;">Transaccion Exitosa</h3>
                     						<hr/>
                                             <h4>
-                                                <span>Status: </span><?php echo $merchant_order_info['status'] ?>
+                                                <span>Status: </span><?php echo $payment_info['status'] ?>
                                             </h4>
                                             <h4>
-                                                <span>Order status: </span><?php echo $merchant_order_info['order_status'] ?>
+                                                <span>Status detail: </span><?php echo $payment_info['status_detail'] ?>
                                             </h4>
                                             <h4>
-                                                <span>Total: </span><?php echo formatDollars( $merchant_order_info['total_amount']) ?>
+                                                <span>Total: </span><?php echo formatDollars( $payment_info['transaction_amount']) ?>
+                                            </h4>
+                                        </div>
+                                </div>
+                                <div class="as-producttile-info" style="float:left;">
+                                        <div class="as-producttile-titlepricewraper">
+                                        	<h4>
+                                        		<span>Informacion recibida.</span>
+                                        	</h4>
+                                            <h4>
+                                                <span>payment_id: </span><?php echo $_GET["collection_id"] ?>
+                                            </h4>
+                                            <h4>
+                                                <span>external_reference : </span><?php echo $_GET["external_reference"]  ?>
+                                            </h4>
+                                            <h4>
+                                                <span>payment_type: </span><?php echo $_GET['payment_type'] ?>
                                             </h4>
                                         </div>
                                 </div>
