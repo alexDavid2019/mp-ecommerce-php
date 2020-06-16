@@ -1,15 +1,19 @@
 <?php include 'inc/MPApi.php'; ?>
 <?php 
 
+//Creamos instancia de la Api..
+$mercadopago = MPApi::getInstance();
+
 //creamos una transaccion aleatorea para identificar el proceso.
-$transaccionID = "TX-".generateRandomString();
+//$externalReference = "TX-".generateRandomString();
+$externalReference =  $mercadopago->getExternalReferenceDefault();
 
 $notification_url = BASE_URL. "/ipnTest.php";
 
 //inicializamos preferencias por defecto..
  $preference = array(
-    'external_reference' => $transaccionID,
-    /*'notification_url' => $notification_url,*/
+    'external_reference' => $externalReference,
+    'notification_url' => $notification_url,
     'statement_descriptor' => strip_tags("Dispositivo movil de Tienda e-commerce")
 );
 
@@ -21,8 +25,6 @@ $excluded_payment_types = array(
                             array("id"=>"ticket"),  
                             array("id"=>"bank_transfer"), 
                             array("id"=>"atm")	); */
-//Creamos instancia de la Api..
-$mercadopago = MPApi::getInstance();
 
 //invocamos la lectura de todos los metodos disponibles en la Api..
 //$payment_methods = $mercadopago->getPaymentMethods();
@@ -116,9 +118,9 @@ $preference['expiration_date_from'] = $date_past;   //Fecha a partir de la cual 
 $preference['expiration_date_to'] = $date_next;     //Fecha en la que la preferencia expirará.
 
 //Enviar los datos al API de Mercado Pago para la generación del link
-write_json_log($preference, DIR_MP_LOG . "createPreference-".$transaccionID."-input.json");
+write_json_log($preference, DIR_MP_LOG . "createPreference-".$externalReference."-input.json");
 $preference_saved = $mercadopago->createPreference($preference);
-write_json_log($preference_saved, DIR_MP_LOG . "createPreference-".$transaccionID."-output.json");
+write_json_log($preference_saved, DIR_MP_LOG . "createPreference-".$externalReference."-output.json");
 
 $preference_id = "";
 $preference_point = "";

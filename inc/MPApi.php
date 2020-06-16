@@ -31,6 +31,10 @@ class MPApi
     {
         return MPRestCli::getCurrentCurrency();
     }
+    public function getExternalReferenceDefault()
+    {
+        return MPRestCli::getExternalReferenceDefault();
+    }
     
     /**
      * Get access token

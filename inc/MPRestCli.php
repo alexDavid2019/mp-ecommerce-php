@@ -5,6 +5,7 @@ class MPRestCli
     const PRODUCT_ID = 'BC32CCRU643001OI39AG';
     const PLATFORM_ID = 'BR8GRBKHPKU001JJH7F0';
     const MERCADOPAGO_INTEGRATOR_ID = 'dev_24c65fb163bf11ea96500242ac130004';
+    const MERCADOPAGO_EXTERNAL_REFERENCE = 'alejandro.pariz@101si.com.ar';
     
     const API_BASE_URL = 'https://api.mercadopago.com';
     const API_BASE_MELI_URL = 'https://api.mercadolibre.com';
@@ -41,6 +42,10 @@ class MPRestCli
     public static function getInstallmentsDefault()
     {
         return self::MERCADOPAGO_INSTALLMENTS;
+    }
+    public static function getExternalReferenceDefault()
+    {
+        return self::MERCADOPAGO_EXTERNAL_REFERENCE;
     }
     
     /**
