@@ -66,7 +66,7 @@ if (setGet('search') && !empty(get('search'))) {
 					<?= formatDollars($item_prod['Price'] ) ;?>
 				</div>
 			</div>
-			<form action="<?= BASE_URL  ;?>/detail.php" method="get">
+			<form action="<?= BASE_URL  ;?>/payment.php" method="get">
 				<input type="hidden" name="productId" value="<?= ucfirst($item_prod['Id'] )  ;?>">
 				<input type="hidden" name="img" value="<?= ucfirst($item_prod['Image'] )  ;?>">
 				<input type="hidden" name="title" value="<?= ucfirst($item_prod['Description'] )  ;?>">

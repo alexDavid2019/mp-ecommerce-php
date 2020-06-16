@@ -1,5 +1,66 @@
 {
-    "name": "mp-ecommerce-php",
-    "type": "project",
-    "require": {}
+	"_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+	],
+	"packages": [
+        {
+            "name": "mercadopago/dx-php",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mercadopago/dx-php.git",
+                "reference": "9a9e4538924edbd8310640b5b7d97125f4fdbaa2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/9a9e4538924edbd8310640b5b7d97125f4fdbaa2",
+                "reference": "9a9e4538924edbd8310640b5b7d97125f4fdbaa2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MercadoPago\\": [
+                        "src/MercadoPago/",
+                        "tests/",
+                        "src/MercadoPago/Entities/",
+                        "src/MercadoPago/Entities/Shared/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "imasson",
+                    "homepage": "https://github.com/imasson",
+                    "role": "Developer"
+                },
+                {
+                    "name": "joelibaceta",
+                    "homepage": "https://github.com/joelibaceta",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/mercadopago/dx-php",
+            "time": "2018-11-28T19:52:54+00:00"
+        }	
+	],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.5.9"
+    },
+    "platform-dev": []
 }
+

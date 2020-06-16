@@ -4,18 +4,32 @@ class MPRestCli
 {
     const PRODUCT_ID = 'BC32CCRU643001OI39AG';
     const PLATFORM_ID = 'BR8GRBKHPKU001JJH7F0';
+    const MERCADOPAGO_INTEGRATOR_ID = 'dev_24c65fb163bf11ea96500242ac130004';
+    
     const API_BASE_URL = 'https://api.mercadopago.com';
     const API_BASE_MELI_URL = 'https://api.mercadolibre.com';
     
-    const MERCADOPAGO_ACCESS_TOKEN = 'APP_USR-6718728269189792-112017-dc8b338195215145a4ec035fdde5cedf-491494389';
-    const MERCADOPAGO_PUBLIC_KEY = 'APP_USR-5b9a3e27-3852-407d-8f49-e08bd5990007';
-    const MERCADOPAGO_INTEGRATOR_ID = 'dev_24c65fb163bf11ea96500242ac130004';
+    //const MERCADOPAGO_ACCESS_TOKEN = 'APP_USR-6718728269189792-112017-dc8b338195215145a4ec035fdde5cedf-491494389';
+    //const MERCADOPAGO_PUBLIC_KEY = 'APP_USR-5b9a3e27-3852-407d-8f49-e08bd5990007';
+    //const MERCADOPAGO_CURRENCY = 'MXN';
+    
+    const MERCADOPAGO_PUBLIC_KEY = 'TEST-671a363d-1f52-431f-8d99-72708c6e40ba';
+    const MERCADOPAGO_ACCESS_TOKEN = 'TEST-4692648458185345-061423-4a7bfc4da4e80efefe99ddb87d85e918-584639858';
+    //const MERCADOPAGO_PUBLIC_KEY = 'APP_USR-7ce65aab-7924-4c6b-95f2-c7c5ffd17b96';
+    //const MERCADOPAGO_ACCESS_TOKEN = 'APP_USR-4692648458185345-061423-4bf17e40b723efd7041c03282b932550-584639858';
+    const MERCADOPAGO_CURRENCY = 'ARS';
+    
     const MERCADOPAGO_INSTALLMENTS = 6; //cantidad maxima de cuotas
     
     public function __construct()
     {
     }
 
+    public static function getCurrentCurrency()
+    {
+        return self::MERCADOPAGO_CURRENCY;
+    }
+    
     public static function getAccessToken()
     {
         return self::MERCADOPAGO_ACCESS_TOKEN;

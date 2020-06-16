@@ -27,6 +27,10 @@ class MPApi
     {
         return MPRestCli::getInstallmentsDefault();
     }
+    public function getCurrentCurrency()
+    {
+        return MPRestCli::getCurrentCurrency();
+    }
     
     /**
      * Get access token
@@ -48,6 +52,7 @@ class MPApi
         return MPRestCli::getPublicKey();
     }
     
+       
     /**
      * Get payment methods
      *
@@ -99,6 +104,7 @@ class MPApi
     public function createPreference($preference)
     {
         $access_token = $this->getAccessToken();
+        
         $tracking_id = "platform:desktop,so:1.0.0";
         $response = MPRestCli::postTracking('/checkout/preferences?access_token=' . $access_token,
                                                 $preference,
@@ -299,5 +305,17 @@ class MPApi
         $result = $response['response'];
 
         return $result['scopes'];
+    }
+    
+    private function build_query($params) {
+        if (function_exists("http_build_query")) {
+            return http_build_query($params, "", "&");
+        } else {
+            foreach ($params as $name => $value) {
+                $elements[] = "{$name}=" . urlencode($value);
+            }
+            
+            return implode("&", $elements);
+        }
     }
 }

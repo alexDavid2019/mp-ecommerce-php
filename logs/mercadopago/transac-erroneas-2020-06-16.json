@@ -1,0 +1,12 @@
+{
+    "data": {
+        "collection_id": "26744028",
+        "collection_status": "rejected",
+        "external_reference": "TX-a34OzTBP",
+        "payment_type": "credit_card",
+        "merchant_order_id": "1531816056",
+        "preference_id": "584639858-26fd388a-4ec4-44c6-96c5-fdd17baff526",
+        "site_id": "MLA",
+        "processing_mode": "aggregator"
+    }
+}
