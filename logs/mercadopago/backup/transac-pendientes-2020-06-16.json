@@ -1,0 +1,12 @@
+{
+    "data": {
+        "collection_id": "7108704527",
+        "collection_status": "pending",
+        "external_reference": "TX-XWm43VPo",
+        "payment_type": "ticket",
+        "merchant_order_id": "1531790261",
+        "preference_id": "584639858-92befc2c-b027-4371-8dc5-4a3c343b7253",
+        "site_id": "MLA",
+        "processing_mode": "aggregator"
+    }
+}

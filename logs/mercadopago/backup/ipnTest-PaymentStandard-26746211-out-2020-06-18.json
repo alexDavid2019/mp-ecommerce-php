@@ -1,0 +1,105 @@
+{
+    "data": {
+        "acquirer": null,
+        "acquirer_reconciliation": [],
+        "additional_info": {
+            "available_balance": null,
+            "ip_address": "181.21.231.15",
+            "nsu_processadora": null
+        },
+        "authorization_code": null,
+        "binary_mode": false,
+        "call_for_authorize_id": null,
+        "captured": true,
+        "card": {
+            "cardholder": {
+                "identification": {
+                    "number": "31256588",
+                    "type": "DNI"
+                },
+                "name": "Alex Test"
+            },
+            "date_created": "2020-06-15T23:26:31.000-04:00",
+            "date_last_updated": "2020-06-15T23:26:31.000-04:00",
+            "expiration_month": 11,
+            "expiration_year": 2025,
+            "first_six_digits": "417006",
+            "id": null,
+            "last_four_digits": "8020"
+        },
+        "collector_id": 584639858,
+        "corporation_id": null,
+        "counter_currency": null,
+        "coupon_amount": 0,
+        "currency_id": "ARS",
+        "date_approved": null,
+        "date_created": "2020-06-15T23:26:31.000-04:00",
+        "date_last_updated": "2020-06-15T23:26:33.000-04:00",
+        "date_of_expiration": null,
+        "deduction_schema": null,
+        "description": "Samsung Galaxy  ",
+        "differential_pricing_id": null,
+        "external_reference": "alejandro.pariz@101si.com.ar",
+        "fee_details": [],
+        "id": 26746211,
+        "installments": 1,
+        "integrator_id": "dev_24c65fb163bf11ea96500242ac130004",
+        "issuer_id": "1",
+        "live_mode": false,
+        "marketplace_owner": null,
+        "merchant_account_id": null,
+        "merchant_number": null,
+        "metadata": [],
+        "money_release_date": null,
+        "money_release_schema": null,
+        "notification_url": "https:\/\/alexdavid2019-mp-ecommerce-php.herokuapp.com\/\/ipnTest.php",
+        "operation_type": "regular_payment",
+        "order": {
+            "id": "1532002720",
+            "type": "mercadopago"
+        },
+        "payer": {
+            "first_name": "Test",
+            "last_name": "Test",
+            "email": "test_user_80507629@testuser.com",
+            "identification": {
+                "number": "32659430",
+                "type": "DNI"
+            },
+            "phone": {
+                "area_code": "01",
+                "number": "1111-1111",
+                "extension": ""
+            },
+            "type": "registered",
+            "entity_type": null,
+            "id": "553647811"
+        },
+        "payment_method_id": "visa",
+        "payment_type_id": "credit_card",
+        "platform_id": "BR8GRBKHPKU001JJH7F0",
+        "pos_id": null,
+        "processing_mode": "aggregator",
+        "refunds": [],
+        "shipping_amount": 0,
+        "sponsor_id": null,
+        "statement_descriptor": "DISPOSITIVOMO",
+        "status": "rejected",
+        "status_detail": "cc_rejected_other_reason",
+        "store_id": null,
+        "taxes_amount": 0,
+        "transaction_amount": 1500,
+        "transaction_amount_refunded": 0,
+        "transaction_details": {
+            "acquirer_reference": null,
+            "external_resource_url": null,
+            "financial_institution": null,
+            "installment_amount": 1500,
+            "net_received_amount": 0,
+            "overpaid_amount": 0,
+            "payable_deferral_period": null,
+            "payment_method_reference_id": null,
+            "total_paid_amount": 1500
+        }
+    }
+}

@@ -5,8 +5,8 @@
 $mercadopago = MPApi::getInstance();
 
 //creamos una transaccion aleatorea para identificar el proceso.
-//$externalReference = "TX-".generateRandomString();
-$externalReference =  $mercadopago->getExternalReferenceDefault();
+$externalReference = "TX-".generateRandomString();
+//$externalReference =  $mercadopago->getExternalReferenceDefault();
 
 $notification_url = BASE_URL. "/ipnTest.php";
 
@@ -31,7 +31,7 @@ $excluded_payment_types = array(
 
 //Indicamos que el max de cuotas es de 6 : getInstallmentsDefault()
 $payment_options = array(
-    'installments' => (integer) $mercadopago->getInstallmentsDefault(),
+    'installments' => 1,/*(integer) $mercadopago->getInstallmentsDefault(),*/
     'excluded_payment_types' => $excluded_payment_types,
     'excluded_payment_methods' => $excluded_payment_methods
 );
@@ -98,9 +98,7 @@ $preference['operation_type'] = "regular_payment";
                                 //regular_payment:  Pago regular.
                                 //money_transfer: Solicitud de dinero.
 
-$nday = time() + ( 24 * 60 * 60);
 $today = date('Y-m-d');
-$nextday = date('Y-m-d',$nday);
 
 $date_next = strtotime('+1 day', strtotime($today));
 $date_next = date('Y-m-d', $date_next);
@@ -113,9 +111,9 @@ $preference['items'] = $cart_items;
 $preference['back_urls'] = $urls_options;
 $preference['payment_methods'] = $payment_options;
 $preference['auto_return'] = "approved";
-$preference['expires'] = true;                      //Preferencia que determina si una preferencia expira.
-$preference['expiration_date_from'] = $date_past;   //Fecha a partir de la cual la preferencia estará activa.
-$preference['expiration_date_to'] = $date_next;     //Fecha en la que la preferencia expirará.
+//$preference['expires'] = true;                      //Preferencia que determina si una preferencia expira.
+//$preference['expiration_date_from'] = $date_past;   //Fecha a partir de la cual la preferencia estará activa.
+//$preference['expiration_date_to'] = $date_next;     //Fecha en la que la preferencia expirará.
 
 //Enviar los datos al API de Mercado Pago para la generación del link
 write_json_log($preference, DIR_MP_LOG . "createPreference-".$externalReference."-input.json");

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "id": 1531802822,
+        "status": "opened",
+        "external_reference": "TX-ZrWskxTi",
+        "preference_id": "584639858-863848a2-1372-4c6a-869c-61b6e71f5b79",
+        "payments": [],
+        "shipments": [],
+        "payouts": [],
+        "collector": {
+            "id": 584639858,
+            "email": "adpariz@yahoo.com",
+            "nickname": "PAAL6767369"
+        },
+        "marketplace": "NONE",
+        "notification_url": null,
+        "date_created": "2020-06-16T00:17:59.985+00:00",
+        "last_updated": "2020-06-16T00:17:59.985+00:00",
+        "sponsor_id": null,
+        "shipping_cost": 0,
+        "total_amount": 1500,
+        "site_id": "MLA",
+        "paid_amount": 0,
+        "refunded_amount": 0,
+        "payer": null,
+        "items": [
+            {
+                "id": "0001",
+                "category_id": "",
+                "currency_id": "ARS",
+                "description": "Samsung Galaxy  ",
+                "picture_url": "http:\/\/localhost\/mp-ecommerce\/assets\/img\/samsung-galaxy-s9-xxl.jpg",
+                "title": "Samsung Galaxy  ",
+                "quantity": 1,
+                "unit_price": 1500
+            }
+        ],
+        "cancelled": false,
+        "additional_info": "",
+        "application_id": null,
+        "order_status": "payment_required"
+    }
+}

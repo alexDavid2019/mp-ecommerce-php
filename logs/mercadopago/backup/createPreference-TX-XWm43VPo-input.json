@@ -1,0 +1,40 @@
+{
+    "data": {
+        "external_reference": "TX-XWm43VPo",
+        "statement_descriptor": "Dispositivo movil de Tienda e-commerce",
+        "operation_type": "regular_payment",
+        "items": [
+            {
+                "id": "0001",
+                "title": "Samsung Galaxy  ",
+                "quantity": 1,
+                "currency_id": "ARS",
+                "picture_url": "http:\/\/localhost\/mp-ecommerce\/assets\/img\/samsung-galaxy-s9-xxl.jpg",
+                "description": "Samsung Galaxy  ",
+                "unit_price": 1500
+            }
+        ],
+        "back_urls": {
+            "success": "http:\/\/localhost\/mp-ecommerce\/\/transaccion_exitosa.php",
+            "pending": "http:\/\/localhost\/mp-ecommerce\/\/transaccion_pendiente.php",
+            "failure": "http:\/\/localhost\/mp-ecommerce\/\/transaccion_erronea.php"
+        },
+        "payment_methods": {
+            "installments": 6,
+            "excluded_payment_types": [
+                {
+                    "id": "atm"
+                }
+            ],
+            "excluded_payment_methods": [
+                {
+                    "id": "amex"
+                }
+            ]
+        },
+        "auto_return": "approved",
+        "expires": true,
+        "expiration_date_from": "2020-06-15",
+        "expiration_date_to": "2020-06-17"
+    }
+}
