@@ -6,51 +6,63 @@
 <?php include 'inc/MPApi.php'; ?>
 
 <?php 
-
+/*
+ * URL recibida en el Log de Heroku:
+2020-06-16T10:25:45.648984+00:00 heroku[router]: 
+at=info method=POST path="//ipnTest.php?data.id=26746211&type=payment" 
+host=alexdavid2019-mp-ecommerce-php.herokuapp.com request_id=abc3c533-4598-4259-9e26-df98bac3cf43 fwd="54.88.218.97" 
+dyno=web.1 connect=1ms service=4ms status=400 bytes=733 protocol=https
+*/
 //Creamos instancia de la Api..
 $mercadopago = MPApi::getInstance();
 
+$id = '';
+$type = '';
+
+foreach($_GET as $key=>$value){
+    if (strpos($key, 'id') !== false) {
+        $id = $value;
+    }
+    if (strpos($key, 'type') !== false) {
+        $type = $value;
+    }    
+}
+
 // Check mandatory parameters
-if (!isset($_GET["id"], $_GET["topic"]) || !ctype_digit($_GET["id"])) {
+if ( empty($id) || empty($type) ) {
+    echo "---------- Argumentos no validos ------------------<br/>";
     http_response_code(400);
     return;
 }
 
-write_json_log(array('id' => $_GET["id"], 'topic' => $_GET["topic"]), DIR_MP_LOG . "notifications-".date('Y-m-d').".json");
+write_json_log(array('id' => $id, 'type' => $type), DIR_MP_LOG . "ipnTest-".date('Y-m-d').".json");
 
-if($_GET["topic"] == 'payment')
+if($type == 'payment')
 {
-    $payment_info = $mercadopago->getPaymentStandard($_GET["id"]);
-    write_json_log($payment_info, DIR_MP_LOG . "PaymentStandard-".$_GET["id"]."-out-".date('Y-m-d').".json");
+    $payment_info = $mercadopago->getPaymentStandard($id);
+    write_json_log($payment_info, DIR_MP_LOG . "ipnTest-PaymentStandard-".$id."-out-".date('Y-m-d').".json");
     
     if (is_array($payment_info) && array_key_exists('order', $payment_info) ) 
     {
         $merchant_order_info = $mercadopago->getMerchantOrder($payment_info["order"]["id"]);
-        write_json_log($merchant_order_info, DIR_MP_LOG . "MerchantOrder-".$payment_info["order"]["id"]."-out-".date('Y-m-d').".json");
+        write_json_log($merchant_order_info, DIR_MP_LOG . "ipnTest-MerchantOrder-".$payment_info["order"]["id"]."-out-".date('Y-m-d').".json");
+    
+        echo "---------- Orden de pago recibido correctamente ------------------";
+    }
+    else {
+        echo "--------- Notificado del pago no valida -----------------------";
     }
 }
-else if($_GET["topic"] == 'merchant_order')
+else if($type == 'merchant_order')
 {
-    $merchant_order_info = $mercadopago->getMerchantOrder($_GET["id"]);
-    write_json_log($merchant_order_info, DIR_MP_LOG . "MerchantOrder-".$_GET["id"]."-out-".date('Y-m-d').".json");
+    $merchant_order_info = $mercadopago->getMerchantOrder($id);
+    write_json_log($merchant_order_info, DIR_MP_LOG . "ipnTest-MerchantOrder-".$id."-out-".date('Y-m-d').".json");
+
+    echo "---------- Orden de pago recibido correctamente ------------------";
+}
+else {
+    echo "---------- Notificacion no valida ------------------";
 }
 
-if ($merchant_order_info["status"] == 200) {
-    $transaction_amount_payments= 0;
-    $transaction_amount_order = $merchant_order_info["response"]["total_amount"];
-    $payments=$merchant_order_info["response"]["payments"];
-    foreach ($payments as  $payment) {
-        if($payment['status'] == 'approved'){
-            $transaction_amount_payments += $payment['transaction_amount'];
-        }
-    }
-    
-    if($transaction_amount_payments >= $transaction_amount_order){
-        echo "--------- Todos los Producto/s transaccionados -----------------------";
-    }
-    else{
-        echo "---------- Aun quedan Producto/s sin transaccionar ------------------";
-    }
-}
 
 ?>
