@@ -5,8 +5,8 @@
 $mercadopago = MPApi::getInstance();
 
 //creamos una transaccion aleatorea para identificar el proceso.
-$externalReference = "TX-".generateRandomString();
-//$externalReference =  $mercadopago->getExternalReferenceDefault();
+//$externalReference = "TX-".generateRandomString();
+$externalReference =  $mercadopago->getExternalReferenceDefault();
 
 $notification_url = BASE_URL. "/ipnTest.php";
 
